@@ -18,9 +18,11 @@ jobs:
           node-version: '14'
 
       - name: Install dependencies
+        working-directory: ./app
         run: yarn install
 
       - name: Run tests
+        working-directory: ./app
         run: yarn test
         env:
           SQLITE_DB_LOCATION: .test-todo.db
